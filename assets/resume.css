@@ -1,0 +1,123 @@
+/* Additions for the projects-and-résumé layout. Loaded after site.css. */
+
+#flagship,#appsheet,#land,#ipo,#rice-paddy,#web,#lab,#experience,#skills,#about{scroll-margin-top:0}
+
+.role-line{align-items:flex-start}
+.role-line b{display:block;font-weight:800}
+
+/* Project index */
+.index-section{padding:120px 0 130px}
+.index-head{justify-content:space-between;align-items:end;gap:40px;margin-bottom:58px;display:flex}
+.index-head h2{letter-spacing:-.065em;margin:0;font-size:clamp(48px,6.3vw,92px);font-weight:650;line-height:.91}
+.index-head h2 i{font-family:Georgia,Times New Roman,serif;font-weight:400}
+.index-list{border-top:1px solid var(--ink)}
+.index-row{border-bottom:1px solid var(--line);grid-template-columns:54px minmax(0,1.05fr) minmax(0,.95fr) 24px;align-items:baseline;gap:24px;padding:21px 0;transition:background .18s,padding .18s;display:grid}
+.index-row:hover{background:var(--acid);padding-left:16px;padding-right:16px}
+.index-row>span{letter-spacing:.12em;font-size:10px;font-weight:800}
+.index-row strong{letter-spacing:-.02em;font:400 clamp(22px,2.5vw,33px)/1.1 Georgia,Times New Roman,serif}
+.index-row em{color:#555047;letter-spacing:.1em;text-transform:uppercase;font-size:10px;font-style:normal;font-weight:700;line-height:1.5}
+.index-row b{text-align:right;font-size:16px;font-weight:400}
+
+/* Case-study sections (Land Project, IPO Dossier, Rice Paddy) */
+.case-section{--fg:#f7f2e8;--muted:#ffffffad;--rule:#fff3;--accent:var(--acid);background:var(--moss);color:var(--fg);padding:145px 0 150px;overflow:hidden}
+.case-ipo{--fg:var(--ink);--muted:#514c45;--rule:#11110f47;--accent:#607c05;background:var(--paper-deep)}
+.case-rice{--accent:var(--acid);background:var(--ink);padding:110px 0 115px}
+.case-section .kicker{color:var(--accent)}
+.case-intro{grid-template-columns:minmax(0,1.1fr) minmax(340px,.72fr);align-items:end;gap:clamp(60px,10vw,150px);display:grid}
+.case-intro h2{letter-spacing:-.07em;margin:0;font-size:clamp(60px,7.8vw,118px);font-weight:650;line-height:.86}
+.case-intro h2 i{color:var(--accent);font-family:Georgia,Times New Roman,serif;font-weight:400}
+.case-rice .case-intro h2{font-size:clamp(46px,5.6vw,84px);line-height:.9}
+.case-summary{padding-bottom:4px}
+.case-summary>p{color:var(--muted);margin:0 0 20px;font-size:14px;line-height:1.72}
+.case-summary .case-lede{color:var(--fg);margin-bottom:25px;font:400 27px/1.35 Georgia,Times New Roman,serif}
+.case-note{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;border-top:1px solid var(--rule);align-items:center;gap:11px;margin-top:30px;padding-top:20px;font-size:9px;font-weight:800;line-height:1.55;display:flex}
+.case-note span{background:var(--accent);border-radius:50%;flex:0 0 8px;width:8px;height:8px}
+.case-facts{border-top:1px solid var(--rule);grid-template-columns:repeat(4,minmax(0,1fr));margin-top:80px;display:grid}
+.case-facts>div{border-bottom:1px solid var(--rule);padding:26px 24px 28px 0}
+.case-facts>div+div{border-left:1px solid var(--rule);padding-left:24px}
+.case-facts b{letter-spacing:-.03em;margin-bottom:10px;font:400 clamp(34px,3.8vw,54px)/1 Georgia,Times New Roman,serif;display:block}
+.case-facts span{color:var(--muted);font-size:12px;line-height:1.55;display:block}
+
+.shot{color:var(--ink);background:#f5f2eb;border:1px solid #11110f3d;transition:transform .22s,box-shadow .22s;display:block;overflow:hidden;box-shadow:0 28px 70px #0000003d}
+.case-ipo .shot{box-shadow:0 24px 60px #11110f24}
+.shot:hover{transform:translateY(-4px)}
+.shot>img{width:100%;height:auto;display:block}
+.shot-main{margin-top:72px}
+.shot-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:26px;margin-top:26px;display:grid}
+.shot-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.shot-label{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;text-align:right;margin:64px 0 -56px;font-size:8px;font-weight:800}
+
+.case-points{border-top:1px solid var(--rule);grid-template-columns:1fr 1fr;margin-top:85px;display:grid}
+.case-point{border-bottom:1px solid var(--rule);grid-template-columns:38px 1fr;gap:12px 18px;padding:34px 32px 38px 0;display:grid}
+.case-point:nth-child(odd){border-right:1px solid var(--rule);padding-right:45px}
+.case-point:nth-child(2n){padding-left:45px}
+.case-point>span{color:var(--accent);letter-spacing:.14em;grid-row:1/3;padding-top:5px;font-size:9px;font-weight:800}
+.case-point h3{margin:0;font:400 26px/1.1 Georgia,Times New Roman,serif}
+.case-point p{color:var(--muted);margin:0;font-size:13px;line-height:1.65}
+
+/* Website section: the overlay labels follow the new project numbers */
+.property-browser:after{content:"Project / 06"}
+.retail-browser:after{content:"Project / 07"}
+
+/* Experience and education */
+.exp-row{grid-template-columns:170px .8fr 1.1fr}
+.exp-row .service-number{line-height:1.6}
+.exp-row h3 small{color:#ffffff8f;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;font:700 10px/1.5 Arial,Helvetica,sans-serif;display:block}
+.exp-row ul{margin:0;padding:0;list-style:none}
+.exp-row li{color:#ffffffad;max-width:520px;padding:0 0 12px 17px;font-size:14px;line-height:1.6;position:relative}
+.exp-row li:before{content:"+";color:var(--acid);position:absolute;left:0}
+.exp-row li:last-child{padding-bottom:0}
+.exp-subhead{color:var(--acid);letter-spacing:.17em;text-transform:uppercase;margin:90px 0 26px;font-size:10px;font-weight:800}
+
+/* Skills */
+.skills-section{padding:140px 0}
+.skills-grid{grid-template-columns:1fr 1.25fr;gap:100px;display:grid}
+.skills-grid h2{letter-spacing:-.065em;margin:0;font-size:clamp(48px,6.3vw,92px);font-weight:650;line-height:.91}
+.skills-grid h2 i{font-family:Georgia,Times New Roman,serif;font-weight:400}
+.skill-groups{border-top:1px solid var(--ink);padding-top:0}
+.skill-group{border-bottom:1px solid var(--line);grid-template-columns:150px 1fr;gap:24px;padding:26px 0;display:grid}
+.skill-group>span{letter-spacing:.14em;text-transform:uppercase;padding-top:8px;font-size:9px;font-weight:800}
+.skill-tags{flex-wrap:wrap;gap:8px;display:flex}
+.skill-tags span{border:1px solid #11110f59;border-radius:999px;padding:8px 12px;font-size:12px;line-height:1.2}
+
+@media (max-width:980px){
+.case-intro{grid-template-columns:1fr;gap:48px}
+.case-summary{max-width:680px}
+.case-facts{grid-template-columns:1fr 1fr}
+.case-facts>div:nth-child(3){border-left:0;padding-left:0}
+.shot-grid-three{grid-template-columns:1fr 1fr}
+.exp-row{grid-template-columns:130px .85fr 1.15fr}
+.skills-grid{grid-template-columns:1fr;gap:50px}
+}
+@media (max-width:760px){
+.index-section{padding:90px 0}
+.index-head{margin-bottom:44px;display:block}
+.index-head .section-note{margin-top:28px}
+.index-row{grid-template-columns:34px minmax(0,1fr) 20px;gap:6px 14px}
+.index-row em{grid-area:2/2/auto/4}
+.case-section,.skills-section{padding:95px 0}
+.case-rice{padding:80px 0}
+.case-intro h2{font-size:clamp(56px,16vw,88px)}
+.case-facts{margin-top:58px}
+.shot-main{margin-top:56px}
+.shot-label{text-align:left;margin:48px 0 -40px}
+.shot-grid,.shot-grid-three{grid-template-columns:1fr;gap:22px;margin-top:22px}
+.case-points{grid-template-columns:1fr;margin-top:64px}
+.case-point,.case-point:nth-child(odd),.case-point:nth-child(2n){border-right:0;padding:28px 0}
+.exp-row{grid-template-columns:1fr;gap:16px}
+.exp-row>p,.exp-row>ul{grid-column:1}
+.exp-subhead{margin-top:64px}
+.skill-group{grid-template-columns:1fr;gap:14px}
+.skill-group>span{padding-top:0}
+}
+@media (max-width:520px){
+.case-intro{gap:38px}
+.case-intro h2{font-size:clamp(44px,13vw,58px);line-height:.92}
+.case-rice .case-intro h2{font-size:clamp(38px,11vw,50px)}
+.case-summary .case-lede{font-size:23px}
+.case-note{align-items:flex-start}
+.case-facts{grid-template-columns:1fr}
+.case-facts>div,.case-facts>div+div{border-left:0;padding:22px 0}
+.case-point{grid-template-columns:30px 1fr}
+.shot .appsheet-caption strong{font-size:17px}
+}
