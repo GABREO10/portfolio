@@ -11,7 +11,7 @@ analysis work.
 ## Structure
 
 - `index.html` - project index, project case studies, experience, education, and skills
-- `contact.html` - contact details and résumé download
+- `contact.html` - contact details
 - `assets/site.css` - base responsive design system
 - `assets/resume.css` - styles for the project index, case studies, experience, and skills
 - `assets/` - sanitized project screenshots, profile image, and résumé
