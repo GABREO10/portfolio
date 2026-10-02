@@ -1,8 +1,8 @@
-# Madhur Maheshwari - Portfolio
+# Madhur Maheshwari - Projects & Résumé
 
-Public portfolio for Madhur Maheshwari, focused on internal web applications,
-AppSheet operations systems, responsive business websites, automation, and data
-analytics.
+Public project portfolio and résumé page for Madhur Maheshwari: operations
+platforms, a farmland decision tool, an IPO research tool, websites, and data
+analysis work.
 
 ## Live site
 
@@ -10,10 +10,15 @@ analytics.
 
 ## Structure
 
-- `index.html` - portfolio homepage
-- `contact.html` - contact and project-enquiry page
-- `assets/site.css` - responsive design system
-- `assets/` - sanitized project screenshots, profile image, and resume
+- `index.html` - project index, project case studies, experience, education, and skills
+- `contact.html` - contact details and résumé download
+- `assets/site.css` - base responsive design system
+- `assets/resume.css` - styles for the project index, case studies, experience, and skills
+- `assets/` - sanitized project screenshots, profile image, and résumé
 
-The published screenshots exclude employer source code, private account details,
-and internal operational identifiers.
+The Rice Paddy Price Prediction section in `index.html` sits between the
+`RICE-PADDY:START` and `RICE-PADDY:END` comment markers; screenshots for it go at
+the `RICE-PADDY:SHOTS` marker.
+
+The published screenshots exclude employer and client source code, private
+account details, client branding, and internal operational identifiers.
