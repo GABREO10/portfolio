@@ -72,7 +72,7 @@
       <a class="index-row" href="#appsheet"><span>02</span><strong>AppSheet Operations System</strong><em>Workflow automation · 10 tables, 80-page manual</em><b>↓</b></a>
       <a class="index-row" href="#land"><span>03</span><strong>Land Project</strong><em>Farmland decision tool · maps, satellite &amp; soil data</em><b>↓</b></a>
       <a class="index-row" href="#ipo"><span>04</span><strong>IPO Dossier</strong><em>IPO research tool · Python prospectus reader</em><b>↓</b></a>
-      <a class="index-row" href="#rice-paddy"><span>05</span><strong>Rice Paddy Price Prediction</strong><em>Price forecasting · data science</em><b>↓</b></a>
+      <a class="index-row" href="#rice-paddy"><span>05</span><strong>Rice Paddy Price Prediction</strong><em>Time-series backtesting · Python, LightGBM &amp; XGBoost</em><b>↓</b></a>
       <a class="index-row" href="#web"><span>06</span><strong>Premium Property Website</strong><em>Responsive website · enquiry journey</em><b>↓</b></a>
       <a class="index-row" href="#web"><span>07</span><strong>Plant Retail Website</strong><em>Catalogue website · retail &amp; wholesale paths</em><b>↓</b></a>
       <a class="index-row" href="#lab"><span>08</span><strong>Football Ticket Intelligence</strong><em>Ticket price prediction · Python</em><b>↓</b></a>
@@ -296,12 +296,40 @@
   <div class="shell case-intro">
     <div><p class="kicker">05 / Price forecasting</p><h2>Rice Paddy<br/><i>Price Prediction.</i></h2></div>
     <div class="case-summary">
-      <p class="case-lede">A forecasting project that predicts rice paddy prices from historical market data.</p>
-      <p>Taken from raw price records through data preparation to a working prediction model.</p>
+      <p class="case-lede">We built a forecasting study for procurement teams that estimated Madhya Pradesh paddy prices one to three calendar months ahead.</p>
+      <p>Developed with a project partner, the study audited market and purchase records separately and compared 19 forecasting methods in Python using monthly price history and a lagged-weather experiment. The AGMARKNET model chosen on earlier data had 10.25% three-month weighted absolute percentage error (WAPE), versus 10.02% for keeping the latest price; it did not establish a dependable improvement.</p>
     </div>
   </div>
   <div class="shell">
     <!-- RICE-PADDY:SHOTS -->
+    <div class="case-facts">
+      <div><b>174,556</b><span>public AGMARKNET price records audited</span></div>
+      <div><b>19</b><span>forecasting methods compared on the same test cases</span></div>
+      <div><b>1–3</b><span>calendar months ahead, evaluated as monthly targets</span></div>
+      <div><b>1,308</b><span>held-out AGMARKNET forecast cases across 11 origins</span></div>
+    </div>
+    <p class="shot-label">Real project outputs · public-market data</p>
+    <a class="shot shot-main" href="assets/rice-paddy-model-comparison.png" target="_blank" aria-label="Open the paddy-price model comparison at full resolution">
+      <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><b>Rice Paddy · historical model comparison</b></div>
+      <img src="assets/rice-paddy-model-comparison.png" alt="Three-month weighted absolute percentage errors for 19 paddy-price forecasting methods on the same held-out AGMARKNET cases" loading="lazy"/>
+      <div class="appsheet-caption"><span>01 / Comparison</span><strong>Nineteen methods on the same test cases</strong><small>Open ↗</small></div>
+    </a>
+    <div class="shot-grid">
+      <a class="shot" href="assets/rice-paddy-agmarknet-errors.png" target="_blank" aria-label="Open the AGMARKNET forecast-error chart at full resolution">
+        <img src="assets/rice-paddy-agmarknet-errors.png" alt="AGMARKNET forecast errors comparing three LightGBM variants with latest-price and seasonal baselines across one-, two- and three-month horizons" loading="lazy"/>
+        <div class="appsheet-caption"><span>02 / AGMARKNET</span><strong>Error across three monthly horizons</strong><small>Open ↗</small></div>
+      </a>
+      <a class="shot" href="assets/rice-paddy-emandi-errors.png" target="_blank" aria-label="Open the MP e-Mandi forecast-error chart at full resolution">
+        <img src="assets/rice-paddy-emandi-errors.png" alt="MP e-Mandi LightGBM and baseline forecast-error chart across three monthly horizons from a sparse historical test sample" loading="lazy"/>
+        <div class="appsheet-caption"><span>03 / MP e-Mandi</span><strong>Sparse MP e-Mandi backtest</strong><small>Open ↗</small></div>
+      </a>
+    </div>
+    <div class="case-points">
+      <article class="case-point"><span>01</span><h3>Kept data sources separate</h3><p>We checked dates, missing values, price-order errors and conflicting reports, set aside unresolved rows, and converted valid daily quotes into monthly observed-price medians. Unverified units stayed separate.</p></article>
+      <article class="case-point"><span>02</span><h3>Used history and context</h3><p>We built lagged and rolling price features, calendar seasonality and market/variety identifiers. Arrival histories were available only for MP e-Mandi; a separate LightGBM experiment used lagged NASA POWER weather.</p></article>
+      <article class="case-point"><span>03</span><h3>Validated against simple baselines</h3><p>We selected settings using earlier time periods and scored later rolling forecast origins against latest-price and seasonal baselines. WAPE described error, and the comparison distinguished validation-selected models from the lowest test error.</p></article>
+      <article class="case-point"><span>04</span><h3>Made results reviewable</h3><p>We displayed saved price history, forecast errors and comparison tables in a read-only local dashboard for procurement research. Historical backtests remained separate from live forecasts that had not been issued.</p></article>
+    </div>
   </div>
 </section>
 <!-- RICE-PADDY:END -->
